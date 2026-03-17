@@ -1,0 +1,118 @@
+{
+  "mainMenu": [
+    {
+      "label": "Dashboard",
+      "href": "/dashboard",
+      "icon": "LayoutDashboard",
+      "children": [
+        {
+          "label": "Overview",
+          "href": "/dashboard/overview"
+        },
+        {
+          "label": "Stock Summary",
+          "href": "/dashboard/stock-summary"
+        },
+        {
+          "label": "Low Stock Alert",
+          "href": "/dashboard/low-stock-alert"
+        }
+      ]
+    },
+    {
+      "label": "Master Data",
+      "href": "/master-data",
+      "icon": "Database",
+      "children": [
+        {
+          "label": "Stores / Warehouse",
+          "href": "/master-data/stores"
+        },
+        {
+          "label": "Item Master",
+          "href": "/master-data/items"
+        },
+        {
+          "label": "Categories",
+          "href": "/master-data/categories"
+        },
+        {
+          "label": "Units",
+          "href": "/master-data/units"
+        }
+      ]
+    },
+    {
+      "label": "Stock Management",
+      "href": "/stock-management",
+      "icon": "Package",
+      "children": [
+        {
+          "label": "Stock In / Out",
+          "href": "/stock-management/stock-io"
+        },
+        {
+          "label": "Stock Transfer",
+          "href": "/stock-management/transfer"
+        },
+        {
+          "label": "Stock Adjustment",
+          "href": "/stock-management/adjustment"
+        }
+      ]
+    },
+    {
+      "label": "Transactions",
+      "href": "/transactions",
+      "icon": "History",
+      "children": [
+        {
+          "label": "Stock Movement History",
+          "href": "/transactions/movement-history"
+        },
+        {
+          "label": "Transaction Logs",
+          "href": "/transactions/logs"
+        }
+      ]
+    },
+    {
+      "label": "Reports",
+      "href": "/reports",
+      "icon": "BarChart3",
+      "children": [
+        {
+          "label": "Stock Balance Report",
+          "href": "/reports/stock-balance"
+        },
+        {
+          "label": "Movement Report",
+          "href": "/reports/movement"
+        },
+        {
+          "label": "Low Stock Report",
+          "href": "/reports/low-stock"
+        }
+      ]
+    },
+    {
+      "label": "User Management",
+      "href": "/user-management",
+      "icon": "Users",
+      "children": [
+        {
+          "label": "Users",
+          "href": "/user-management/users"
+        },
+        {
+          "label": "Roles",
+          "href": "/user-management/roles"
+        },
+        {
+          "label": "Permissions",
+          "href": "/user-management/permissions"
+        }
+      ]
+    }
+  ]
+}
