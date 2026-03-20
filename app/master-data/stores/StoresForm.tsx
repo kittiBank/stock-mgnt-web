@@ -1,6 +1,9 @@
 "use client";
 
 import { useForm } from "react-hook-form";
+import Input from "@/app/components/ui/Input";
+import Select from "@/app/components/ui/Select";
+import Button from "@/app/components/ui/Button";
 import { Store, storeTypes } from "./mockData";
 
 interface StoresFormProps {
@@ -9,7 +12,7 @@ interface StoresFormProps {
   isLoading?: boolean;
 }
 
-// Form component for creating and editing stores
+// Form component for creating and editing stores with shadcn UI components
 export default function StoresForm({
   store,
   onSubmit,
@@ -31,132 +34,105 @@ export default function StoresForm({
   });
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
       {/* Code field */}
-      <div>
-        <label className="block text-sm font-medium text-blue-950 mb-1">
-          รหัสคลัง *
-        </label>
-        <input
-          type="text"
-          placeholder="เช่น WH001"
-          {...register("code", {
-            required: "กรุณากรอกรหัสคลัง",
-            minLength: { value: 2, message: "รหัสต้องยาวอย่างน้อย 2 ตัวอักษร" },
-          })}
-          className="w-full px-3 py-2 border border-blue-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-blue-50"
-          disabled={isLoading || !!store}
-        />
-        {errors.code && (
-          <p className="text-red-500 text-sm mt-1">
-            {String(errors.code.message)}
-          </p>
-        )}
-      </div>
+      <Input
+        label="รหัสคลัง *"
+        placeholder="เช่น WH001"
+        {...register("code", {
+          required: "กรุณากรอกรหัสคลัง",
+          minLength: { value: 2, message: "รหัสต้องยาวอย่างน้อย 2 ตัวอักษร" },
+        })}
+        error={errors.code?.message ? String(errors.code.message) : ""}
+        disabled={isLoading || !!store}
+      />
 
       {/* Name Thai field */}
-      <div>
-        <label className="block text-sm font-medium text-blue-950 mb-1">
-          ชื่อคลัง (ไทย) *
-        </label>
-        <input
-          type="text"
-          placeholder="เช่น คลังสินค้าหลัก"
-          {...register("nameTh", {
-            required: "กรุณากรอกชื่อคลัง (ไทย)",
-          })}
-          className="w-full px-3 py-2 border border-blue-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-blue-50"
-          disabled={isLoading}
-        />
-        {errors.nameTh && (
-          <p className="text-red-500 text-sm mt-1">
-            {String(errors.nameTh.message)}
-          </p>
-        )}
-      </div>
+      <Input
+        label="ชื่อคลัง (ไทย) *"
+        placeholder="เช่น คลังสินค้าหลัก"
+        {...register("nameTh", {
+          required: "กรุณากรอกชื่อคลัง (ไทย)",
+        })}
+        error={errors.nameTh?.message ? String(errors.nameTh.message) : ""}
+        disabled={isLoading}
+      />
 
       {/* Name English field */}
-      <div>
-        <label className="block text-sm font-medium text-blue-950 mb-1">
-          ชื่อคลัง (อังกฤษ) *
-        </label>
-        <input
-          type="text"
-          placeholder="เช่น Main Warehouse"
-          {...register("nameEn", {
-            required: "กรุณากรอกชื่อคลัง (อังกฤษ)",
-          })}
-          className="w-full px-3 py-2 border border-blue-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-blue-50"
-          disabled={isLoading}
-        />
-        {errors.nameEn && (
-          <p className="text-red-500 text-sm mt-1">
-            {String(errors.nameEn.message)}
-          </p>
-        )}
-      </div>
+      <Input
+        label="ชื่อคลัง (อังกฤษ) *"
+        placeholder="เช่น Main Warehouse"
+        {...register("nameEn", {
+          required: "กรุณากรอกชื่อคลัง (อังกฤษ)",
+        })}
+        error={errors.nameEn?.message ? String(errors.nameEn.message) : ""}
+        disabled={isLoading}
+      />
 
-      {/* Type field */}
-      <div>
-        <label className="block text-sm font-medium text-blue-950 mb-1">
-          ประเภทคลัง *
-        </label>
-        <select
-          {...register("type", {
-            required: "กรุณาเลือกประเภทคลัง",
-          })}
-          className="w-full px-3 py-2 border border-blue-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-blue-50"
-          disabled={isLoading}
-        >
-          {storeTypes.map((type) => (
-            <option key={type.value} value={type.value}>
-              {type.label}
-            </option>
-          ))}
-        </select>
-        {errors.type && (
-          <p className="text-red-500 text-sm mt-1">
-            {String(errors.type.message)}
-          </p>
-        )}
-      </div>
+      {/* Type field - Select component */}
+      <Select
+        label="ประเภทคลัง *"
+        {...register("type", {
+          required: "กรุณาเลือกประเภทคลัง",
+        })}
+        error={errors.type?.message ? String(errors.type.message) : ""}
+        disabled={isLoading}
+      >
+        {storeTypes.map((type) => (
+          <option key={type.value} value={type.value}>
+            {type.label}
+          </option>
+        ))}
+      </Select>
 
       {/* Address field */}
       <div>
-        <label className="block text-sm font-medium text-blue-950 mb-1">
+        <label className="block text-sm font-medium text-blue-950 mb-2">
           ที่อยู่
         </label>
         <textarea
           placeholder="เช่น 123 ถนนสุขุมวิท กรุงเทพฯ"
           {...register("address")}
           rows={3}
-          className="w-full px-3 py-2 border border-blue-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-blue-50 resize-none"
           disabled={isLoading}
+          className={`
+            w-full px-3 py-2 rounded-lg border border-blue-200 bg-white
+            text-sm font-medium text-gray-900 placeholder:text-gray-600
+            focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-400
+            hover:border-blue-300
+            disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50
+            resize-none transition-all duration-200 shadow-sm hover:shadow-md
+          `}
         />
       </div>
 
       {/* Active status field */}
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-3 p-3 bg-blue-50 rounded-lg border border-blue-200">
         <input
           type="checkbox"
           id="isActive"
           {...register("isActive")}
-          className="w-4 h-4 text-blue-600 border-blue-300 rounded focus:ring-2 focus:ring-blue-500"
           disabled={isLoading}
+          className="w-5 h-5 rounded border-blue-300 text-blue-600 focus:ring-2 focus:ring-blue-500 cursor-pointer"
         />
-        <label htmlFor="isActive" className="text-sm font-medium text-blue-950">
+        <label
+          htmlFor="isActive"
+          className="text-sm font-medium text-blue-950 cursor-pointer"
+        >
           เปิดใช้งาน
         </label>
       </div>
 
       {/* Submit button */}
-      <button
+      <Button
         type="submit"
+        variant="primary"
+        size="lg"
         disabled={isLoading}
-        className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white font-medium py-2 px-4 rounded-lg transition-colors"
+        className="w-full"
       >
         {isLoading ? "กำลังบันทึก..." : store ? "อัปเดต" : "สร้างใหม่"}
-      </button>
+      </Button>
     </form>
   );
 }
