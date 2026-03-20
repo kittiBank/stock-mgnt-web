@@ -5,6 +5,7 @@ import { Trash2, Edit2 } from "lucide-react";
 import Breadcrumb from "@/app/components/Breadcrumb";
 import Dialog from "@/app/components/Dialog";
 import Badge from "@/app/components/Badge";
+import Button from "@/app/components/ui/Button";
 import FilterBar, { FilterOption } from "@/app/components/ui/FilterBar";
 import CreateButton from "@/app/components/ui/CreateButton";
 import Pagination from "@/app/components/ui/Pagination";
@@ -288,6 +289,12 @@ export default function StoresPage() {
         isOpen={isFormOpen}
         onClose={handleCloseForm}
         title={selectedStore ? "แก้ไขคลังสินค้า" : "สร้างคลังสินค้าใหม่"}
+        description={
+          selectedStore
+            ? "อัปเดตข้อมูลการจัดเก็บสินค้า"
+            : "กรอกข้อมูลเพื่อสร้างคลังสินค้าใหม่"
+        }
+        size="lg"
       >
         <StoresForm store={selectedStore} onSubmit={handleFormSubmit} />
       </Dialog>
@@ -297,6 +304,7 @@ export default function StoresPage() {
         isOpen={isDeleteConfirmOpen}
         onClose={() => setIsDeleteConfirmOpen(false)}
         title="ยืนยันการลบ"
+        description="การดำเนินการนี้ไม่สามารถย้อนกลับได้"
         size="sm"
       >
         <div className="space-y-4">
@@ -308,18 +316,22 @@ export default function StoresPage() {
             ?
           </p>
           <div className="flex gap-3 pt-4">
-            <button
+            <Button
+              variant="outline"
+              size="md"
               onClick={() => setIsDeleteConfirmOpen(false)}
-              className="flex-1 px-4 py-2 border border-blue-300 rounded-lg text-blue-600 hover:bg-blue-50 transition-colors"
+              className="flex-1"
             >
               ยกเลิก
-            </button>
-            <button
+            </Button>
+            <Button
+              variant="destructive"
+              size="md"
               onClick={handleConfirmDelete}
-              className="flex-1 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors"
+              className="flex-1"
             >
               ลบ
-            </button>
+            </Button>
           </div>
         </div>
       </Dialog>

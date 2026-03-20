@@ -6,7 +6,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   icon?: React.ReactNode;
 }
 
-// Input component following shadcn UI patterns
+// Input component following shadcn UI patterns with white/blue styling
 const Input = forwardRef<HTMLInputElement, InputProps>(
   ({ label, error, icon, className = "", ...props }, ref) => {
     return (
@@ -18,20 +18,22 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         )}
         <div className="relative">
           {icon && (
-            <div className="absolute left-3 top-1/2 -translate-y-1/2 text-blue-400">
+            <div className="absolute left-3 top-1/2 -translate-y-1/2 text-blue-600">
               {icon}
             </div>
           )}
           <input
             ref={ref}
             className={`
-              w-full px-3 py-2 rounded-md border border-blue-200 bg-white
-              text-sm text-gray-900 placeholder:text-gray-600
-              focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent
-              disabled:opacity-50 disabled:cursor-not-allowed
-              transition-colors duration-200
+              w-full px-3 py-2 rounded-lg border border-blue-200 bg-white
+              text-sm font-medium text-gray-900 placeholder:text-gray-600
+              focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-400
+              hover:border-blue-300
+              disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50
+              transition-all duration-200
+              shadow-sm hover:shadow-md
               ${icon ? "pl-10" : ""}
-              ${error ? "border-red-500 focus:ring-red-500" : ""}
+              ${error ? "border-red-500 focus:ring-red-500 focus:border-red-400" : ""}
               ${className}
             `}
             {...props}
