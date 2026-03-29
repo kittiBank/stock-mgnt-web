@@ -1,0 +1,136 @@
+// Mock data for units
+export interface Unit {
+  id: string;
+  code: string;
+  name_th: string;
+  name_en: string;
+  is_active: boolean;
+  created_by: string;
+  created_at: string;
+  updated_by: string;
+  updated_at: string;
+}
+
+export const mockUnits: Unit[] = [
+  {
+    id: "1",
+    code: "PCS",
+    name_th: "ชิ้น",
+    name_en: "Piece",
+    is_active: true,
+    created_by: "admin",
+    created_at: "2025-01-15T10:30:00Z",
+    updated_by: "admin",
+    updated_at: "2025-01-15T10:30:00Z",
+  },
+  {
+    id: "2",
+    code: "BOX",
+    name_th: "กล่อง",
+    name_en: "Box",
+    is_active: true,
+    created_by: "admin",
+    created_at: "2025-01-16T09:15:00Z",
+    updated_by: "admin",
+    updated_at: "2025-01-16T09:15:00Z",
+  },
+  {
+    id: "3",
+    code: "KG",
+    name_th: "กิโลกรัม",
+    name_en: "Kilogram",
+    is_active: true,
+    created_by: "manager",
+    created_at: "2025-01-17T14:45:00Z",
+    updated_by: "manager",
+    updated_at: "2025-01-17T14:45:00Z",
+  },
+  {
+    id: "4",
+    code: "L",
+    name_th: "ลิตร",
+    name_en: "Liter",
+    is_active: true,
+    created_by: "admin",
+    created_at: "2025-01-18T08:20:00Z",
+    updated_by: "admin",
+    updated_at: "2025-01-18T08:20:00Z",
+  },
+  {
+    id: "5",
+    code: "M",
+    name_th: "เมตร",
+    name_en: "Meter",
+    is_active: false,
+    created_by: "admin",
+    created_at: "2025-01-19T11:00:00Z",
+    updated_by: "admin",
+    updated_at: "2025-02-10T15:30:00Z",
+  },
+  {
+    id: "6",
+    code: "SET",
+    name_th: "ชุด",
+    name_en: "Set",
+    is_active: true,
+    created_by: "admin",
+    created_at: "2025-01-20T12:30:00Z",
+    updated_by: "admin",
+    updated_at: "2025-01-20T12:30:00Z",
+  },
+  {
+    id: "7",
+    code: "PKG",
+    name_th: "แพ็ค",
+    name_en: "Pack",
+    is_active: true,
+    created_by: "manager",
+    created_at: "2025-01-21T10:15:00Z",
+    updated_by: "manager",
+    updated_at: "2025-01-21T10:15:00Z",
+  },
+  {
+    id: "8",
+    code: "CASE",
+    name_th: "ลัง",
+    name_en: "Case",
+    is_active: true,
+    created_by: "admin",
+    created_at: "2025-01-22T14:00:00Z",
+    updated_by: "admin",
+    updated_at: "2025-01-22T14:00:00Z",
+  },
+  {
+    id: "9",
+    code: "PAIR",
+    name_th: "คู่",
+    name_en: "Pair",
+    is_active: true,
+    created_by: "admin",
+    created_at: "2025-01-23T11:20:00Z",
+    updated_by: "admin",
+    updated_at: "2025-01-23T11:20:00Z",
+  },
+  {
+    id: "10",
+    code: "GALLON",
+    name_th: "แกลลอน",
+    name_en: "Gallon",
+    is_active: false,
+    created_by: "manager",
+    created_at: "2025-01-24T09:45:00Z",
+    updated_by: "manager",
+    updated_at: "2025-01-24T09:45:00Z",
+  },
+  {
+    id: "11",
+    code: "TON",
+    name_th: "ตัน",
+    name_en: "Ton",
+    is_active: true,
+    created_by: "admin",
+    created_at: "2025-01-25T15:30:00Z",
+    updated_by: "admin",
+    updated_at: "2025-01-25T15:30:00Z",
+  },
+];
