@@ -1,0 +1,136 @@
+// Mock data for categories
+export interface Category {
+  id: string;
+  code: string;
+  nameTh: string;
+  nameEn: string;
+  isActive: boolean;
+  createdBy: string;
+  createdAt: string;
+  updatedBy: string;
+  updatedAt: string;
+}
+
+export const mockCategories: Category[] = [
+  {
+    id: "cat-001",
+    code: "CAT001",
+    nameTh: "อิเล็กทรอนิกส์",
+    nameEn: "Electronics",
+    isActive: true,
+    createdBy: "admin",
+    createdAt: "2025-01-15T10:30:00Z",
+    updatedBy: "admin",
+    updatedAt: "2025-01-15T10:30:00Z",
+  },
+  {
+    id: "cat-002",
+    code: "CAT002",
+    nameTh: "เฟอร์นิเจอร์",
+    nameEn: "Furniture",
+    isActive: true,
+    createdBy: "admin",
+    createdAt: "2025-01-16T09:15:00Z",
+    updatedBy: "admin",
+    updatedAt: "2025-01-16T09:15:00Z",
+  },
+  {
+    id: "cat-003",
+    code: "CAT003",
+    nameTh: "เสื้อผ้า",
+    nameEn: "Clothing",
+    isActive: true,
+    createdBy: "admin",
+    createdAt: "2025-01-17T14:45:00Z",
+    updatedBy: "admin",
+    updatedAt: "2025-01-17T14:45:00Z",
+  },
+  {
+    id: "cat-004",
+    code: "CAT004",
+    nameTh: "อาหาร",
+    nameEn: "Food & Beverage",
+    isActive: true,
+    createdBy: "admin",
+    createdAt: "2025-01-18T11:20:00Z",
+    updatedBy: "admin",
+    updatedAt: "2025-01-18T11:20:00Z",
+  },
+  {
+    id: "cat-005",
+    code: "CAT005",
+    nameTh: "หนังสือและสื่อ",
+    nameEn: "Books & Media",
+    isActive: true,
+    createdBy: "admin",
+    createdAt: "2025-02-01T08:30:00Z",
+    updatedBy: "admin",
+    updatedAt: "2025-02-01T08:30:00Z",
+  },
+  {
+    id: "cat-006",
+    code: "CAT006",
+    nameTh: "เครื่องกีฬา",
+    nameEn: "Sports Equipment",
+    isActive: false,
+    createdBy: "admin",
+    createdAt: "2025-02-05T15:10:00Z",
+    updatedBy: "admin",
+    updatedAt: "2025-02-10T10:00:00Z",
+  },
+  {
+    id: "cat-007",
+    code: "CAT007",
+    nameTh: "ของเล่นและเกม",
+    nameEn: "Toys & Games",
+    isActive: true,
+    createdBy: "admin",
+    createdAt: "2025-02-12T09:45:00Z",
+    updatedBy: "admin",
+    updatedAt: "2025-02-12T09:45:00Z",
+  },
+  {
+    id: "cat-008",
+    code: "CAT008",
+    nameTh: "อุปกรณ์บ้าน",
+    nameEn: "Home Appliances",
+    isActive: true,
+    createdBy: "admin",
+    createdAt: "2025-02-15T13:25:00Z",
+    updatedBy: "admin",
+    updatedAt: "2025-02-15T13:25:00Z",
+  },
+  {
+    id: "cat-009",
+    code: "CAT008",
+    nameTh: "อุปกรณ์บ้าน",
+    nameEn: "Home Appliances",
+    isActive: true,
+    createdBy: "admin",
+    createdAt: "2025-02-15T13:25:00Z",
+    updatedBy: "admin",
+    updatedAt: "2025-02-15T13:25:00Z",
+  },
+  {
+    id: "cat-010",
+    code: "CAT008",
+    nameTh: "อุปกรณ์บ้าน",
+    nameEn: "Home Appliances",
+    isActive: true,
+    createdBy: "admin",
+    createdAt: "2025-02-15T13:25:00Z",
+    updatedBy: "admin",
+    updatedAt: "2025-02-15T13:25:00Z",
+  },
+  {
+    id: "cat-011",
+    code: "CAT008",
+    nameTh: "อุปกรณ์บ้าน",
+    nameEn: "Home Appliances",
+    isActive: true,
+    createdBy: "admin",
+    createdAt: "2025-02-15T13:25:00Z",
+    updatedBy: "admin",
+    updatedAt: "2025-02-15T13:25:00Z",
+  },
+];
