@@ -43,6 +43,17 @@
       ]
     },
     {
+      "label": "Inventory",
+      "href": "/inventory",
+      "icon": "Boxes",
+      "children": [
+        {
+          "label": "Stock Balance",
+          "href": "/inventory/stock-balance"
+        }
+      ]
+    },
+    {
       "label": "Stock Management",
       "href": "/stock-management",
       "icon": "Package",
